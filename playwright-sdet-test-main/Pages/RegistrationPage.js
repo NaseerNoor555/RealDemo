@@ -9,17 +9,17 @@ export class Registration
     {
         await this.page.locator('.flex.justify-between>* p').first().click();
         await this.page.locator('.flex.flex-col.items-center.gap-2').waitFor();
-        await this.page.getByLabel('firstName').fill(firstName);
+        await this.page.getByLabel('input', {name: 'firstName'}).fill(firstName);
         console.log('Entered First Name....')
-        await this.page.getByLabel('lastName').fill(lastName);
+        await this.page.getByLabel('input', {name:'lastName'}).fill(lastName);
         console.log('Entered Last Name...')
-        await this.page.getByLabel('username').fill(userName);
+        await this.page.getByLabel('input', {name:'username'}).fill(userName);
         console.log('Entered User Name...')
-        await this.page.getByLabel('emailAddress').fill(Email);
+        await this.page.getByLabel('input', {name:'emailAddress'}).fill(Email);
         console.log('Entered Email Address...')
-        await this.page.getByLabel('password').fill(password);
+        await this.page.getByLabel('input', {name:'password'}).fill(password);
         console.log('Entered Password...')
-        await this.page.getByLabel('confirmPassword').fill(passwordConfirmation);
+        await this.page.getByLabel('input', {name:'confirmPassword'}).fill(passwordConfirmation);
         console.log('Entered confirmation password');
         await this.page.locator('#mantine-tmodch5ii').check();
         await this.page.locator('#mantine-wujye7ui6').check();
