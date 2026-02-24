@@ -5,7 +5,7 @@ export class Registration
         this.page = page;
     }
 
-    async signUpPage(firstName, lastName, userName, Email, password, passwordConfirmation)
+    async signUpPage(firstName, lastName, userName, email, password, passwordConfirmation)
     {
         await this.page.locator('.flex.justify-between>* p').first().click();
         await this.page.locator('.flex.flex-col.items-center.gap-2').waitFor();
@@ -15,7 +15,7 @@ export class Registration
         console.log('Entered Last Name...')
         await this.page.getByLabel('input', {name:'username'}).fill(userName);
         console.log('Entered User Name...')
-        await this.page.getByLabel('input', {name:'emailAddress'}).fill(Email);
+        await this.page.getByLabel('input', {name:'emailAddress'}).fill(email);
         console.log('Entered Email Address...')
         await this.page.getByLabel('input', {name:'password'}).fill(password);
         console.log('Entered Password...')
